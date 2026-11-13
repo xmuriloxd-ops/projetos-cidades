@@ -1,0 +1,8 @@
+{
+  "name": "fronteira-do-sul-rp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Central de regras da Fronteira do Sul RP com painel de administrador",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

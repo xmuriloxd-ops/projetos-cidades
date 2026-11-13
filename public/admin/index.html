@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin — Fronteira do Sul RP</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><img src="/img/logo.png" alt="" width="36" height="36"><span>FRONTEIRA DO SUL</span></a>
+  <div class="links" style="margin-left:auto">
+    <a href="/" target="_blank" rel="noopener">Ver site</a>
+    <button class="ghost" id="logout" hidden>Sair</button>
+  </div>
+</header>
+
+<main>
+  <form class="card login" id="login" hidden>
+    <p class="kicker">ÁREA RESTRITA</p>
+    <h1>Painel do administrador</h1>
+    <label>Login <input id="user" autocomplete="username" required></label>
+    <label>Senha <input id="pass" type="password" autocomplete="current-password" required></label>
+    <p class="msg error" id="loginMsg" role="alert"></p>
+    <button class="btn" type="submit">Entrar</button>
+  </form>
+
+  <div id="panel" hidden>
+    <div class="savebar">
+      <div class="seg" id="views">
+        <button data-view="geral" class="on">Regulamento geral</button>
+        <button data-view="policia">Regras da Polícia</button>
+        <button data-view="site">Textos e fotos do site</button>
+      </div>
+      <span class="msg" id="status" role="status"></span>
+      <button class="btn" id="save">Salvar alterações</button>
+    </div>
+
+    <section id="viewRules">
+      <div class="card grid2" id="tabFields"></div>
+      <div id="list"></div>
+      <button class="btn add" id="add">+ Adicionar regra / seção</button>
+      <details class="card help">
+        <summary>Como formatar o texto das regras</summary>
+        <ul>
+          <li>Deixe uma <b>linha em branco</b> entre os parágrafos.</li>
+          <li><code>## Título</code> cria um subtítulo dentro da seção.</li>
+          <li><code>- item</code> cria uma lista.</li>
+          <li><code>**texto**</code> deixa em negrito.</li>
+          <li><code>| Infração | Valor | Pontos |</code> cria uma tabela (a primeira linha é o cabeçalho).</li>
+          <li>O botão <b>Adicionar foto</b> envia a imagem e coloca ela no fim do texto; mova a linha <code>![legenda](…)</code> para onde quiser.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="viewSite" hidden></section>
+  </div>
+</main>
+<input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+<script src="/render.js"></script>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

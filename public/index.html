@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fronteira do Sul RP — Uma nova história começa aqui</title>
+<meta name="description" content="Central de regras da Fronteira do Sul RP. Consulte o regulamento geral e as regras da polícia.">
+<meta property="og:title" content="Fronteira do Sul RP — Uma nova história começa aqui">
+<meta property="og:image" content="/img/convite.jpg">
+<link rel="icon" href="/img/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">
+    <img id="brandLogo" alt="" width="36" height="36">
+    <span id="brandName"></span>
+  </a>
+  <nav class="tabs" id="tabs" aria-label="Seções do site"></nav>
+  <div class="links">
+    <a href="/convite/">Convite</a>
+    <a href="/admin/" class="admin-link">Admin</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="kicker" id="heroKicker"></p>
+      <h1><span id="heroTitle"></span> <em id="heroEm"></em></h1>
+      <p class="lead" id="heroText"></p>
+      <label class="search">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Pesquisar no regulamento…" autocomplete="off" aria-label="Pesquisar no regulamento">
+      </label>
+      <p class="meta" id="meta"></p>
+    </div>
+    <div class="emblem">
+      <span class="emblem-name" id="emblemName"></span>
+      <img id="emblemLogo" alt="Emblema da cidade Fronteira do Sul RP">
+      <span class="emblem-sub" id="emblemSub"></span>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="doc-head">
+      <div>
+        <p class="kicker" id="docKicker"></p>
+        <h2 id="docTitle"></h2>
+        <p class="intro" id="docIntro"></p>
+      </div>
+      <span class="badge" id="docBadge"></span>
+    </div>
+
+    <article class="destaque" id="destaque">
+      <p class="kicker" id="dTag"></p>
+      <h3 id="dTitle"></h3>
+      <p id="dText"></p>
+    </article>
+
+    <div class="layout">
+      <aside class="toc" id="toc" aria-label="Índice"></aside>
+      <div class="sections" id="sections"></div>
+    </div>
+    <p class="empty" id="empty" hidden>Nenhuma regra encontrada para essa pesquisa.</p>
+  </section>
+</main>
+
+<footer class="footer" id="footer"></footer>
+
+<script src="/render.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

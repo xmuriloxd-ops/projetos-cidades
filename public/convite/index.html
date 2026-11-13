@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fronteira do Sul RP — Convite oficial</title>
+<meta name="description" content="Conheça a cidade, confira as regras oficiais e prepare-se para o roleplay.">
+<meta property="og:title" content="Fronteira do Sul RP — Convite oficial">
+<meta property="og:image" content="/img/convite.jpg">
+<link rel="icon" href="/img/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="convite-page">
+<main class="convite">
+  <img id="cImg" alt="Convite da Fronteira do Sul RP — Uma nova história começa aqui. Consulte as regras.">
+  <div class="convite-text">
+    <p class="kicker" id="cKicker">CONVITE OFICIAL</p>
+    <h1 id="cTitle">Uma nova história começa aqui.</h1>
+    <p class="lead" id="cText">Conheça a cidade, confira as regras oficiais e prepare-se para o roleplay.</p>
+    <a class="btn" id="cBtn" href="/">Consultar regras oficiais</a>
+  </div>
+</main>
+<script src="/render.js"></script>
+<script>
+fetch('/api/content').then(function (r) { return r.json(); }).then(function (d) {
+  var c = d.convite, $ = function (id) { return document.getElementById(id); };
+  $('cKicker').textContent = c.kicker; $('cTitle').textContent = c.title;
+  $('cText').textContent = c.text; $('cBtn').textContent = c.button;
+  var src = FS.safeUrl(c.image);
+  if (src) $('cImg').src = src; else $('cImg').hidden = true;
+});
+</script>
+</body>
+</html>
