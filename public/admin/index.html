@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Fronteira do Sul RP</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-top">
+    <div class="admin-brand">
+      <img src="/assets/logo.png" alt="">
+      <span>Painel Admin · <strong>Fronteira do Sul RP</strong></span>
+    </div>
+
+    <nav class="admin-tabs" id="admin-tabs" hidden>
+      <button class="atab active" data-panel="general" type="button">Regras gerais</button>
+      <button class="atab" data-panel="police" type="button">Regras da Polícia</button>
+      <button class="atab" data-panel="site" type="button">Ajustes do site</button>
+      <button class="atab" data-panel="invite" type="button">Convite</button>
+      <button class="atab" data-panel="gallery" type="button">Fotos</button>
+    </nav>
+
+    <div class="admin-actions">
+      <span class="save-status" id="save-status"></span>
+      <button class="btn btn-gold" id="btn-save" type="button" hidden>Salvar alterações</button>
+      <button class="btn" id="btn-logout" type="button" hidden>Sair</button>
+      <a class="btn btn-ghost" href="/" target="_blank" rel="noopener">Ver site ↗</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <!-- LOGIN -->
+    <section class="login-card" id="view-login">
+      <img class="login-logo" src="/assets/logo.png" alt="Emblema da cidade Fronteira do Sul RP">
+      <h1>Login do administrador</h1>
+      <p class="login-sub">Área restrita. Entre para editar as regras, fotos e ajustes do site.</p>
+      <form id="login-form" autocomplete="off">
+        <label>
+          Usuário
+          <input id="login-user" type="text" placeholder="admin" required>
+        </label>
+        <label>
+          Senha
+          <input id="login-pass" type="password" placeholder="••••••" required>
+        </label>
+        <button class="btn btn-gold btn-block" type="submit">Entrar</button>
+      </form>
+      <p class="login-error" id="login-error" hidden></p>
+    </section>
+
+    <!-- PAINEL -->
+    <section class="panel-wrap" id="view-panel" hidden>
+      <div class="panel" id="panel-root"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

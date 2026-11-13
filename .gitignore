@@ -1,0 +1,10 @@
+node_modules/
+
+# Dados de execução (gerados pelo servidor/painel)
+data/content.json
+data/sessions.json
+data/config.json
+
+# Fotos enviadas pelo administrador
+uploads/*
+!uploads/.gitkeep

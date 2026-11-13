@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fronteira do Sul RP — Convite oficial</title>
+  <meta name="description" content="Convite oficial da Fronteira do Sul RP — uma nova história começa aqui. Consulte as regras.">
+  <meta property="og:title" content="Fronteira do Sul RP — Convite oficial">
+  <meta property="og:description" content="Uma nova história começa aqui. Conheça a cidade, confira as regras oficiais e prepare-se para o roleplay.">
+  <meta property="og:image" content="/assets/convite-banner.jpg">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    .invite-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+    .invite-card {
+      width: min(760px, 100%);
+      background: linear-gradient(160deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+    .invite-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #070b13;
+    }
+    .invite-media img { width: 100%; height: 100%; object-fit: cover; }
+    .invite-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,14,23,0) 45%, rgba(17,26,43,0.95));
+    }
+    .invite-logo {
+      position: absolute;
+      left: 50%;
+      bottom: -34px;
+      transform: translateX(-50%);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(240, 180, 41, 0.7);
+      z-index: 2;
+      background: var(--panel);
+    }
+    .invite-body { padding: 54px 32px 40px; }
+    .invite-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      margin: 0 0 14px;
+    }
+    .invite-body h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .invite-body p {
+      margin: 0 auto 26px;
+      max-width: 480px;
+      color: var(--muted);
+    }
+    .invite-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: #12100a;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: 999px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .invite-cta:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(240, 180, 41, 0.35);
+    }
+    .invite-footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: var(--muted-2);
+      border-top: 1px solid var(--line-soft);
+    }
+    .invite-footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="invite-wrap">
+    <div class="invite-card">
+      <div class="invite-media">
+        <img id="invite-image" src="/assets/convite-banner.jpg" alt="Convite da Fronteira do Sul RP — Uma nova história começa aqui. Consulte as regras.">
+        <img class="invite-logo" id="invite-logo" src="/assets/logo.png" alt="Emblema da cidade Fronteira do Sul RP">
+      </div>
+      <div class="invite-body">
+        <p class="invite-label" id="invite-label">CONVITE OFICIAL</p>
+        <h1 id="invite-title">Uma nova história começa aqui.</h1>
+        <p id="invite-subtitle">Conheça a cidade, confira as regras oficiais e prepare-se para o roleplay.</p>
+        <a class="invite-cta" id="invite-cta" href="/">Consultar regras oficiais</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="invite-footer">
+    <span id="invite-footer">FRONTEIRA DO SUL RP · REGRAS PARA UMA CIDADE MELHOR</span>
+    &nbsp;·&nbsp; <a href="/">Regulamento</a> &nbsp;·&nbsp; <a href="/admin/">Admin</a>
+  </footer>
+
+  <script>
+    (function () {
+      fetch('/api/content', { cache: 'no-store' })
+        .then((r) => r.json())
+        .then((c) => {
+          const inv = c.invite || {};
+          if (inv.label) document.getElementById('invite-label').textContent = inv.label;
+          if (inv.title) document.getElementById('invite-title').textContent = inv.title;
+          if (inv.subtitle) document.getElementById('invite-subtitle').textContent = inv.subtitle;
+          if (inv.cta) document.getElementById('invite-cta').textContent = inv.cta;
+          if (inv.image) document.getElementById('invite-image').src = inv.image;
+          if (c.site) {
+            if (c.site.pageTitle) document.title = 'Fronteira do Sul RP — Convite oficial';
+            if (c.site.logo) document.getElementById('invite-logo').src = c.site.logo;
+            if (c.site.footer) document.getElementById('invite-footer').textContent = c.site.footer;
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
+</html>

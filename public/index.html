@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fronteira do Sul RP — Uma nova história começa aqui</title>
+  <meta name="description" content="Central de regras da Fronteira do Sul RP. Consulte o regulamento da cidade, navegue pelas seções ou pesquise qualquer termo.">
+  <meta property="og:title" content="Fronteira do Sul RP — Uma nova história começa aqui">
+  <meta property="og:description" content="Conheça a cidade, confira as regras oficiais e prepare-se para o roleplay.">
+  <meta property="og:image" content="/assets/convite-banner.jpg">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand-mini" href="/">
+      <img src="/assets/logo.png" alt="Emblema da cidade Fronteira do Sul RP">
+      <span class="brand-mini-name">FRONTEIRA DO SUL</span>
+    </a>
+
+    <nav class="tabs" role="tablist" aria-label="Documentos">
+      <button class="tab active" type="button" data-tab="general" role="tab" aria-selected="true">Regulamento geral</button>
+      <button class="tab" type="button" data-tab="police" role="tab" aria-selected="false">Regras da Polícia</button>
+      <a class="tab tab-admin" href="/admin/">Admin</a>
+    </nav>
+
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+      <input id="search" type="search" placeholder="Pesquisar no regulamento…" autocomplete="off" aria-label="Pesquisar no regulamento">
+      <span id="search-count" class="search-count" hidden></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="hero-label" id="hero-label">CENTRAL DE REGRAS</p>
+    <h1 id="hero-title">Roleplay justo. <em>Histórias melhores.</em></h1>
+    <p class="hero-sub" id="hero-sub">Consulte o regulamento da cidade com clareza.</p>
+    <p class="hero-meta" id="hero-meta">12 seções · Busca em todo o regulamento</p>
+  </section>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <img id="brand-logo" src="/assets/logo.png" alt="Emblema da cidade Fronteira do Sul RP">
+        <div class="brand-name" id="brand-name">FRONTEIRA DO SUL</div>
+        <div class="brand-tag" id="brand-tag">GUIA OFICIAL DA CIDADE</div>
+      </div>
+
+      <nav class="index" id="index" aria-label="Índice das seções"></nav>
+
+      <a class="sidebar-link" href="#galeria">Galeria da cidade</a>
+    </aside>
+
+    <main class="doc">
+      <div class="doc-head">
+        <span class="doc-label" id="doc-label">DOCUMENTO DA CIDADE</span>
+        <h2 id="doc-title">Regulamento completo</h2>
+      </div>
+
+      <div class="highlight" id="highlight">
+        <div class="highlight-badges">
+          <span class="chip chip-gold" id="highlight-badge">CONSULTA ABERTA</span>
+          <span class="chip" id="highlight-tag">REGRA DE INTEGRIDADE</span>
+        </div>
+        <h3 id="highlight-title">Cheats ou vantagens indevidas são proibidas</h3>
+        <p id="highlight-text"></p>
+      </div>
+
+      <div id="sections"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        Nenhuma seção encontrada para essa pesquisa.
+      </div>
+
+      <div id="extras" class="extras content"></div>
+
+      <section id="gallery-section" class="gallery-section" hidden>
+        <div class="doc-head">
+          <span class="doc-label">GALERIA</span>
+          <h2>Galeria da cidade</h2>
+        </div>
+        <div class="gallery" id="gallery"></div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-line" id="footer-text">FRONTEIRA DO SUL RP · REGRAS PARA UMA CIDADE MELHOR</div>
+        <a class="footer-invite" href="/convite/">Ver convite oficial</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/js/site.js"></script>
+</body>
+</html>
